@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Clients</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+</head>
+<body>
+    <div class="col-2 d-inline-block bg-primary">
+        <ul>
+            <li><a href="/dashboard" class="text-white">Home</a></li>
+            <li><a href="/workers" class="text-white">Worker List</a></li>
+            <li><a href="/newjob" class="text-white">Create New Job</a></li>
+            <li><a href="/jobs" class="text-white">View Jobs</a></li>
+        </ul>
+    </div>
+    <div class="col-8 d-inline-block align-top">
+        <a href="/clients/new">Add New Client</a>
+        <table class="col-12">
+            <thead>
+                <th>Property Name</th>
+                <th>Phone Number</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>Actions</th>
+            </thead>
+            <tbody>
+                {% for i in clients %}
+                <tr>
+                    <td>{{i.name}}</td>
+                    <td>{{i.phone_number}}</td>
+                    <td>{{i.address}}</td>
+                    <td>{{i.city}}</td>
+                    <td>
+                        <a href="/clients/{{i.id}}/edit">Edit</a>
+                        <a href="/clients/{{i.id}}/delete">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

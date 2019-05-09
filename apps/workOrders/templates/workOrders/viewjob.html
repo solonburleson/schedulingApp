@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>New Job</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+</head>
+<body>
+    <div class="col-2 d-inline-block bg-primary">
+        <ul>
+            <li><a href="/dashboard" class="text-white">Dashboard</a></li>
+            <li><a href="/workers" class="text-white">Worker List</a></li>
+            <li><a href="/clients" class="text-white">Client List</a></li>
+            <li><a href="/jobs" class="text-white">View Jobs</a></li>
+        </ul>
+    </div>
+    <div class="col-8 d-inline-block align-top">
+        <h1>View Job</h1>
+        <p>Property Name: {{job.prop.name}}</p>
+        <p>Requested By: {{job.request_by}}</p>
+        <p>Worker Assigned: {{job.employee.first_name}} {{job.employee.last_name}}</p>
+        <p>Job Type: {{job.job_type}}</p>
+        <p>Additional Information: {{job.add_info}}</p>
+        <p>Scheduled Date: {{job.date_assigned}}</p>
+        <p>Status: {{job.status}}</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+</head>
+<body>
+    <div class="col-11">
+        <div class="col-5 d-inline-block">
+            <form action='/register' method="POST">
+                {% csrf_token %}
+                <label for="fname">First name:</label>
+                <input type="text" id="fname" class="form-control" name="fname" value="{{ request.session.fname }}">
+                <label for="lname">Last name:</label>
+                <input type="text" id="lname" class="form-control" name="lname" value="{{ request.session.lname }}">
+                <label for="email">Email:</label>
+                <input type="text" id="email" class="form-control" name="email" value="{{ request.session.email }}">
+                <label for="pw">Password:</label>
+                <input type="password" id="pw" class="form-control" name="password">
+                <label for="confirm_pw">Confirm Password:</label>
+                <input type="password" id="confirm_pw" class="form-control" name="confirm_pw">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="col-5 d-inline-block align-top">
+            <form action='login' method='POST'>
+                {% csrf_token %}
+                <label for="email">Email:</label>
+                <input id="email" class="form-control" name="email">
+                <label for="password">Password:</label>
+                <input id="password" type="password" class="form-control" name="password">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>    
+</body>
+</html>
